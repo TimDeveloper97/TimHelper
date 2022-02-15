@@ -1,0 +1,115 @@
+﻿###HandyControl
+Step 1: Add a reference to HandyControl or search for HandyControl on the nuget;
+
+Install-Package HandyControl
+
+Step 2: Add code in App.xaml as follows:
+
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>
+Step 3: Add NameSpace: xmlns:hc="https://handyorg.github.io/handycontrol"
+
+Step 4: Enjoy coding 
+https://github.com/handyOrg/HandyControl
+
+###MahApps.Metro
+Step 1: PM> Install-Package MahApps.Metro
+Step 2: Add code in App.xaml as follows:
+
+<Application x:Class="SampleApp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <!-- Theme setting -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
+Step 3: 
+https://mahapps.com/docs/guides/quick-start
+
+###Material Design
+Step 1: PM> Install-Package MaterialDesignThemes
+Step 2: Add code in App.xaml as follows:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Application . . .>
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
+
+Step 3: Edit MainWindow.xaml to following:
+
+<Window . . .
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+  <Grid>
+    <materialDesign:Card Padding="32" Margin="16">
+      <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
+    </materialDesign:Card>
+  </Grid>
+</Window>
+
+Step 4: 
+https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit
+
+###ModernWPF UI
+Step 1: Install-Package ModernWpfUI
+Step 2: Edit App.xaml to following:
+
+<Application
+    ...
+    xmlns:ui="http://schemas.modernwpf.com/2019">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources />
+                <ui:XamlControlsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+
+Step 3: Edit MainWindow.xaml to following:
+
+<Window
+    ...
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    ui:WindowHelper.UseModernWindowStyle="True">
+    <ui:SimpleStackPanel Margin="12" Spacing="24">
+        <TextBlock Text="My first ModernWPF app" Style="{StaticResource HeaderTextBlockStyle}" />
+        <Button Content="I am a button" />
+        <Button Content="I am an accent button" Style="{StaticResource AccentButtonStyle}" />
+    </ui:SimpleStackPanel>
+</Window>
+
+Step 4: 
+https://github.com/Kinnara/ModernWpf
+https://github.com/Kinnara/ModernWpf/wiki
