@@ -50,3 +50,48 @@ Android: Plugin.MaterialDesignControls.Android.Renderer.Init();
 Xaml: xmlns:material="clr-namespace:Plugin.MaterialDesignControls;assembly=Plugin.MaterialDesignControls"
 
 Step 3: https://github.com/HorusSoftwareUY/MaterialDesignControlsPlugin
+
+
+###Rg.Plugins.Popup
+Step 1: https://github.com/rotorgames/Rg.Plugins.Popup/wiki/Getting-started
+Step 2.1: https://github.com/rotorgames/Rg.Plugins.Popup/wiki/PopupPage
+Step 2.2: https://docs.microsoft.com/en-us/answers/questions/221603/xamarin-forms-popup-from-bottom-of-screen.html
+
+
+#ImageCircle
+Step 1: Download the current version through NuGet and install it in your Xamarin.Forms projects.
+Step 2: In your iOS, Android, and Windows projects call:
+Xamarin.Forms.Init(); //platform specific init
+ImageCircleRenderer.Init();
+
+Step 3: xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+Step 4: Usage
+
+new CircleImage
+{
+  BorderColor = Color.White,
+  BorderThickness = 3,
+  HeightRequest = 150,
+  WidthRequest = 150,
+  Aspect = Aspect.AspectFill,
+  HorizontalOptions = LayoutOptions.Center,
+  Source = UriImageSource.FromUri(new Uri("http://upload.wikimedia.org/wikipedia/commons/5/55/Tamarin_portrait.JPG"))
+}
+
+<controls:CircleImage Source="{Binding Image}" Aspect="AspectFill">
+  <controls:CircleImage.WidthRequest>
+    <OnPlatform x:TypeArguments="x:Double">
+      <On Platform="Android, iOS">55</On>
+      <On Platform="WinPhone">75</On>
+    </OnPlatform>
+  </controls:CircleImage.WidthRequest>
+  <controls:CircleImage.HeightRequest>
+    <OnPlatform x:TypeArguments="x:Double">
+      <On Platform="Android, iOS">55</On>
+      <On Platform="WinPhone">75</On>
+    </OnPlatform>
+  </controls:CircleImage.HeightRequest>
+</controls:CircleImage>
+
+Step 5: https://github.com/jamesmontemagno/ImageCirclePlugin
+
